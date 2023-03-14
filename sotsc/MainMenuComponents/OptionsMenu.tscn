@@ -1,0 +1,190 @@
+[gd_scene load_steps=2 format=3 uid="uid://b622tq73r34tc"]
+
+[ext_resource type="FontFile" uid="uid://b216605k6c2nl" path="res://style/Fonts/Pixel_NES.otf" id="1_4rs60"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.00392157, 0.145098, 1)
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="settings" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 187.0
+offset_right = 437.0
+offset_bottom = 233.0
+text = "settings"
+
+[node name="settings2" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 295.0
+offset_right = 437.0
+offset_bottom = 341.0
+text = "settings"
+
+[node name="settings3" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 350.0
+offset_right = 439.0
+offset_bottom = 396.0
+text = "settings"
+
+[node name="settings4" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 241.0
+offset_right = 437.0
+offset_bottom = 287.0
+text = "settings"
+
+[node name="settings5" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 133.0
+offset_right = 437.0
+offset_bottom = 179.0
+text = "settings"
+
+[node name="settings6" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 459.0
+offset_right = 437.0
+offset_bottom = 505.0
+text = "settings"
+
+[node name="settings7" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 567.0
+offset_right = 437.0
+offset_bottom = 613.0
+text = "settings"
+
+[node name="settings9" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 513.0
+offset_right = 437.0
+offset_bottom = 559.0
+text = "settings"
+
+[node name="settings10" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 405.0
+offset_right = 437.0
+offset_bottom = 451.0
+text = "settings"
+
+[node name="settings8" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 187.0
+offset_right = 839.0
+offset_bottom = 233.0
+text = "settings"
+
+[node name="settings11" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 295.0
+offset_right = 839.0
+offset_bottom = 341.0
+text = "settings"
+
+[node name="settings12" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 350.0
+offset_right = 841.0
+offset_bottom = 396.0
+text = "settings"
+
+[node name="settings13" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 241.0
+offset_right = 839.0
+offset_bottom = 287.0
+text = "settings"
+
+[node name="settings14" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 133.0
+offset_right = 839.0
+offset_bottom = 179.0
+text = "settings"
+
+[node name="settings15" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 459.0
+offset_right = 839.0
+offset_bottom = 505.0
+text = "settings"
+
+[node name="settings16" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 567.0
+offset_right = 839.0
+offset_bottom = 613.0
+text = "settings"
+
+[node name="settings17" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 513.0
+offset_right = 839.0
+offset_bottom = 559.0
+text = "settings"
+
+[node name="settings18" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 405.0
+offset_right = 839.0
+offset_bottom = 451.0
+text = "settings"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 20.0
+offset_right = 731.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("1_4rs60")
+theme_override_font_sizes/font_size = 64
+text = "Options"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 536.0
+offset_right = 241.0
+offset_bottom = 620.0
+theme_override_fonts/font = ExtResource("1_4rs60")
+theme_override_font_sizes/font_size = 64
+text = "Back"

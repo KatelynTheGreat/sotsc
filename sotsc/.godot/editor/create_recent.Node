@@ -1,0 +1,17 @@
+Area3D
+StaticBody3D
+CharacterBody3D
+RigidBody3D
+WorldEnvironment
+SpotLight3D
+MeshInstance3D
+GPUParticles2D
+CPUParticles2D
+ColorRect
+CanvasLayer
+ShaderGlobalsOverride
+GPUParticles3D
+Node3D
+Camera3D
+AnimationPlayer
+Sprite3D

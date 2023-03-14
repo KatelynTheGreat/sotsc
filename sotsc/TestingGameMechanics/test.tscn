@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfr5h37wyi88y"]
+
+[ext_resource type="PackedScene" uid="uid://brld6o8f6uxs1" path="res://Player/Player.tscn" id="1_i5ttn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bv65f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2y0r"]
+albedo_color = Color(0.517647, 0.647059, 0.945098, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xoct1"]
+points = PackedVector3Array(-1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1)
+
+[sub_resource type="Environment" id="Environment_kaato"]
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dbrr"]
+
+[node name="test" type="Node3D"]
+
+[node name="Ground2" type="MeshInstance3D" parent="."]
+transform = Transform3D(15.0738, 0, 0, 0, 1, 0, 0, 0, 17.739, -15.6032, -2.89168, -1.06363)
+mesh = SubResource("BoxMesh_bv65f")
+surface_material_override/0 = SubResource("StandardMaterial3D_c2y0r")
+
+[node name="StaticBody" type="StaticBody3D" parent="Ground2"]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Ground2/StaticBody"]
+shape = SubResource("ConvexPolygonShape3D_xoct1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kaato")
+
+[node name="Player" parent="." instance=ExtResource("1_i5ttn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4826, -1.89168, -2.32522)
+
+[node name="box" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.835729, 0, 0, 0, 0.849581, 0, 0, 0, 1.08955, -15.6032, -0.0528319, 1.3701)
+mesh = SubResource("BoxMesh_bv65f")
+surface_material_override/0 = SubResource("StandardMaterial3D_c2y0r")
+
+[node name="Area3D" type="Area3D" parent="box"]
+disable_mode = 2
+gravity_space_override = 4
+gravity_point = true
+gravity_point_unit_distance = 4.0
+
+[node name="CollisionShape" type="CollisionShape3D" parent="box/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 1.71661e-05, 0.00222252, -0.00184369)
+shape = SubResource("BoxShape3D_7dbrr")
