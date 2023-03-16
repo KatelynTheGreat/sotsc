@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+signal walL
+signal sprinting
+
 var speed = 25
 var acceleration = 5
 var gravity = 0.98
@@ -11,13 +14,18 @@ var INstamina = 0
 
 @onready var head = $Head
 @onready var camera = $Head/Camera
+@onready var Raycast = $Head/Camera/RayCast
 
 var velocty = Vector3()
 var camera_x_rotation = 0
 var clicks = 0
 
+#Test scene
+@onready var wall = get_node("res://TestingGameMechanics/test.tscn/wall")
+
 
 func _ready():
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
@@ -29,20 +37,32 @@ func _input(event):
 			camera.rotate_x(deg_to_rad(-x_delta))
 			camera_x_rotation += x_delta
 
+var max_stamina = 100
+var current_stamina = 100
+var stamina_regeneration_rate = 10
+
+
+
 func _process(delta):
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):
 	var head_basis = head.get_global_transform().basis
 	
+	if Input.is_action_pressed("Interact"):
+		if Raycast.is_colliding():
+			var collider = Raycast.get_collider()
+			if collider.get_name() == "wall":
+				print("This a wall")
+				emit_signal("walL")
+			else:
+				print("Not sure")
+	
 	if Input.is_action_pressed("Shift"):
-		if cooldown == true and clicks == 0:
-			clicks = 1
-
-			print("On cooldown")
-		if cooldown == false:
-			speed = 100
+		emit_signal("sprinting")
+		speed = 30
 	else:
 		speed = 25
 	var direction = Vector3()
@@ -62,3 +82,7 @@ func _physics_process(delta):
 	velocity.y -= gravity
 	
 	move_and_slide()
+
+
+
+

@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://c46fnqs8ukst"]
+
+[ext_resource type="FontFile" uid="uid://b216605k6c2nl" path="res://style/Fonts/Pixel_NES.otf" id="1_pesdn"]
+[ext_resource type="Script" path="res://TestingGameMechanics/Scripts/ProgressBar.gd" id="1_ymgdr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3k8v"]
+bg_color = Color(0.0509804, 0.176471, 0.262745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7v6c"]
+bg_color = Color(0.12549, 0.329412, 0.447059, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awcjo"]
+bg_color = Color(0.423529, 0, 0, 0.419608)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je6tt"]
+bg_color = Color(0.705882, 0, 0, 0.419608)
+
+[node name="Stamina_Insanity" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ymgdr")
+
+[node name="Stamina" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -42.0
+offset_right = 321.0
+offset_bottom = -2.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_pesdn")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/background = SubResource("StyleBoxFlat_c3k8v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h7v6c")
+value = 100.0
+rounded = true
+
+[node name="Insanity" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 148.0
+offset_right = 1149.0
+offset_bottom = 433.0
+theme_override_fonts/font = ExtResource("1_pesdn")
+theme_override_styles/background = SubResource("StyleBoxFlat_awcjo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_je6tt")
+fill_mode = 3

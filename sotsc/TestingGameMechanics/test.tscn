@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfr5h37wyi88y"]
+[gd_scene load_steps=11 format=3 uid="uid://b2qeu26rqq0rp"]
 
-[ext_resource type="PackedScene" uid="uid://brld6o8f6uxs1" path="res://Player/Player.tscn" id="1_i5ttn"]
+[ext_resource type="PackedScene" uid="uid://gr2kqqtu57ua" path="res://Player/Player.tscn" id="1_i5ttn"]
+[ext_resource type="Script" path="res://TestingGameMechanics/Scripts/Interactwall.gd" id="2_ny385"]
+[ext_resource type="PackedScene" uid="uid://c46fnqs8ukst" path="res://TestingGameMechanics/stamina_insanity.tscn" id="3_h6xux"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bv65f"]
 
@@ -14,7 +16,13 @@ points = PackedVector3Array(-1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 16.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7dbrr"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5sn4k"]
+size = Vector3(1.4279, 3.37702, 3.60167)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nicm"]
+size = Vector3(1.32961, 1.19891, 1.9653)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g72k8"]
 
 [node name="test" type="Node3D"]
 
@@ -32,19 +40,53 @@ shape = SubResource("ConvexPolygonShape3D_xoct1")
 environment = SubResource("Environment_kaato")
 
 [node name="Player" parent="." instance=ExtResource("1_i5ttn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4826, -1.89168, -2.32522)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4826, -0.8235, -2.32522)
 
-[node name="box" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.835729, 0, 0, 0, 0.849581, 0, 0, 0, 1.08955, -15.6032, -0.0528319, 1.3701)
-mesh = SubResource("BoxMesh_bv65f")
-surface_material_override/0 = SubResource("StandardMaterial3D_c2y0r")
+[node name="wall" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5014, -0.488144, 0)
+continuous_cd = true
+script = ExtResource("2_ny385")
 
-[node name="Area3D" type="Area3D" parent="box"]
-disable_mode = 2
-gravity_space_override = 4
-gravity_point = true
-gravity_point_unit_distance = 4.0
+[node name="CSGBox3D" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 3.40823, 0, 0, 0, 3.59825, 0, -0.206084, 0)
 
-[node name="CollisionShape" type="CollisionShape3D" parent="box/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 1.71661e-05, 0.00222252, -0.00184369)
-shape = SubResource("BoxShape3D_7dbrr")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.200073, 0)
+shape = SubResource("BoxShape3D_5sn4k")
+
+[node name="block" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6061, 0, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block"]
+shape = SubResource("BoxShape3D_3nicm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="block"]
+mesh = SubResource("BoxMesh_g72k8")
+skeleton = NodePath("../..")
+
+[node name="Stamina_Insanity" parent="." instance=ExtResource("3_h6xux")]
+offset_top = -3.0
+offset_bottom = -3.0
+
+[node name="Stamina" parent="Stamina_Insanity" index="0"]
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 322.0
+offset_bottom = 48.0
+grow_vertical = 1
+
+[node name="Insanity" parent="Stamina_Insanity" index="1"]
+offset_left = 7.0
+offset_top = 307.0
+offset_right = 34.0
+offset_bottom = 592.0
+
+[connection signal="sprinting" from="Player" to="Stamina_Insanity" method="_on_player_sprinting"]
+[connection signal="walL" from="Player" to="wall" method="_on_player_wal_l"]
+
+[editable path="Player"]
+[editable path="Stamina_Insanity"]
