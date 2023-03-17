@@ -37,12 +37,32 @@ func _input(event):
 			camera.rotate_x(deg_to_rad(-x_delta))
 			camera_x_rotation += x_delta
 
+var max_stamina = 100
+var current_stamina = 100
+var stamina_drain_rate = 10
+var stamina_regeneration_rate = 5
 
 func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#get_tree().free()
+
+	if Input.is_action_pressed("Shift"):
+		if crouched == true:
+			speed = 15
+			current_stamina = clamp(current_stamina + stamina_regeneration_rate * delta, 0, max_stamina)
+			$Stamina_Insanity/Stamina.value = current_stamina
+		else:
+			current_stamina = clamp(current_stamina - stamina_drain_rate * delta, 0, max_stamina)
+			$Stamina_Insanity/Stamina.value = current_stamina
+			speed = 30
+	else:
+		current_stamina = clamp(current_stamina + stamina_regeneration_rate * delta, 0, max_stamina)
+		$Stamina_Insanity/Stamina.value = current_stamina
+		speed = 25
+		
+		
 
 func _physics_process(delta):
 	var head_basis = head.get_global_transform().basis
@@ -55,35 +75,21 @@ func _physics_process(delta):
 				emit_signal("walL")
 			else:
 				print("Not sure")
-	
+	var space_state = get_world_3d().direct_space_state
 	if Input.is_action_just_pressed("Crouch"):
-		if crouched == true:
-			$AnimationPlayer.play("UnCrouch")
-			crouched = false
-			speed = 25
-			return
-		if crouched == false:
-			$AnimationPlayer.play("Crouch")
-			speed = 15
-			crouched = true
-			return
+		var crouchedResult = space_state.intersect_ray( PhysicsRayQueryParameters3D.create(position, position + Vector3(0,2,0), 1, [self.get_rid()]))
+		if crouchedResult.size() == 0:
+			if crouched == true:
+				$AnimationPlayer.play("UnCrouch")
+				crouched = false
+				speed = 25
+				return
+			if crouched == false:
+				$AnimationPlayer.play("Crouch")
+				speed = 15
+				crouched = true
+				return
 	
-	
-	var max_stamina = 100
-	var current_stamina = 100
-	var stamina_drain_rate = 10
-	var stamina_regeneration_rate = 12
-	
-	
-	
-	if Input.is_action_pressed("Shift"):
-			current_stamina -= 5
-			$Stamina_Insanity/Stamina.value = current_stamina
-			print($Stamina_Insanity/Stamina.value)
-			speed = 30
-		
-		
-
 	var direction = Vector3()
 	if Input.is_action_pressed("move_forward"):
 		direction -= head_basis.z
