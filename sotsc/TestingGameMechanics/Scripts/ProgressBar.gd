@@ -1,7 +1,6 @@
 extends Control
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -12,8 +11,7 @@ var shift_pressed = false
 func _on_player_sprinting():
 	if Input.is_action_pressed("Shift"):
 		shift_pressed = true
-	else:
-		shift_pressed = false
+
 
 var max_stamina = 100
 var current_stamina = 100

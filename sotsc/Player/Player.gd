@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 signal walL
-signal sprinting
 
 var speed = 25
 var acceleration = 5
@@ -19,14 +18,15 @@ var INstamina = 0
 var velocty = Vector3()
 var camera_x_rotation = 0
 var clicks = 0
+var crouch_speed = 15
+var crouched = false
 
-#Test scene
-@onready var wall = get_node("res://TestingGameMechanics/test.tscn/wall")
+
 
 
 func _ready():
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -37,16 +37,12 @@ func _input(event):
 			camera.rotate_x(deg_to_rad(-x_delta))
 			camera_x_rotation += x_delta
 
-var max_stamina = 100
-var current_stamina = 100
-var stamina_regeneration_rate = 10
-
-
 
 func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#get_tree().free()
 
 func _physics_process(delta):
 	var head_basis = head.get_global_transform().basis
@@ -60,11 +56,34 @@ func _physics_process(delta):
 			else:
 				print("Not sure")
 	
+	if Input.is_action_just_pressed("Crouch"):
+		if crouched == true:
+			$AnimationPlayer.play("UnCrouch")
+			crouched = false
+			speed = 25
+			return
+		if crouched == false:
+			$AnimationPlayer.play("Crouch")
+			speed = 15
+			crouched = true
+			return
+	
+	
+	var max_stamina = 100
+	var current_stamina = 100
+	var stamina_drain_rate = 10
+	var stamina_regeneration_rate = 12
+	
+	
+	
 	if Input.is_action_pressed("Shift"):
-		emit_signal("sprinting")
-		speed = 30
-	else:
-		speed = 25
+			current_stamina -= 5
+			$Stamina_Insanity/Stamina.value = current_stamina
+			print($Stamina_Insanity/Stamina.value)
+			speed = 30
+		
+		
+
 	var direction = Vector3()
 	if Input.is_action_pressed("move_forward"):
 		direction -= head_basis.z

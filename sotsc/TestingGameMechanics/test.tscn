@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2qeu26rqq0rp"]
+[gd_scene load_steps=10 format=3 uid="uid://b2qeu26rqq0rp"]
 
 [ext_resource type="PackedScene" uid="uid://gr2kqqtu57ua" path="res://Player/Player.tscn" id="1_i5ttn"]
 [ext_resource type="Script" path="res://TestingGameMechanics/Scripts/Interactwall.gd" id="2_ny385"]
-[ext_resource type="PackedScene" uid="uid://c46fnqs8ukst" path="res://TestingGameMechanics/stamina_insanity.tscn" id="3_h6xux"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bv65f"]
 
@@ -65,28 +64,7 @@ shape = SubResource("BoxShape3D_3nicm")
 mesh = SubResource("BoxMesh_g72k8")
 skeleton = NodePath("../..")
 
-[node name="Stamina_Insanity" parent="." instance=ExtResource("3_h6xux")]
-offset_top = -3.0
-offset_bottom = -3.0
-
-[node name="Stamina" parent="Stamina_Insanity" index="0"]
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 3.0
-offset_top = 8.0
-offset_right = 322.0
-offset_bottom = 48.0
-grow_vertical = 1
-
-[node name="Insanity" parent="Stamina_Insanity" index="1"]
-offset_left = 7.0
-offset_top = 307.0
-offset_right = 34.0
-offset_bottom = 592.0
-
-[connection signal="sprinting" from="Player" to="Stamina_Insanity" method="_on_player_sprinting"]
 [connection signal="walL" from="Player" to="wall" method="_on_player_wal_l"]
 
 [editable path="Player"]
-[editable path="Stamina_Insanity"]
+[editable path="Player/Stamina_Insanity"]

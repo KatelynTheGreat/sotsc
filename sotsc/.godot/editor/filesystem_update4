@@ -1,12 +1,12 @@
 res://default_env.tres
-res://TestingGameMechanics/stamina_insanity.tscn
+res://MainMenuComponents/start_gui.tscn
 res://style/shader.tres
 res://Images/Particles/rain.gdshader
-res://MainMenuComponents/start_gui.tscn
-res://TestingGameMechanics/Scripts/ProgressBar.gd
 res://MainMenuComponents/hush_panel.tscn
 res://MainMenuComponents/OptionsMenu.tscn
 res://Main.tscn
 res://TestingGameMechanics/test.tscn
 res://Player/Player.tscn
+res://TestingGameMechanics/stamina_insanity.tscn
 res://Player/Player.gd
+res://TestingGameMechanics/Scripts/ProgressBar.gd
