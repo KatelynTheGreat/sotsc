@@ -1,6 +1,7 @@
+Marker3D
+NavigationRegion3D
 Timer
 NavigationAgent3D
-NavigationRegion3D
 MeshInstance3D
 CollisionShape3D
 CharacterBody3D

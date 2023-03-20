@@ -10,7 +10,7 @@ enum States{
 
 var currentState : States
 @onready var navigationAgent : NavigationAgent3D
-@export var waypoints : Array[Marker3D]
+@onready var waypoints = get_tree().get_nodes_in_group("EnemyWaypoint")
 var waypointIndex : int
 @export var speed = 2
 
@@ -18,7 +18,7 @@ var waypointIndex : int
 func _ready():
 	currentState = States.patrol
 	navigationAgent = $NavigationAgent3D
-	navigationAgent.set_target_location(waypoints[0].global_position)
+	navigationAgent.set_target_position(waypoints[0].global_position)
 	pass
 
 func _physics_process(delta):
@@ -26,7 +26,7 @@ func _physics_process(delta):
 		States.patrol:
 			if(navigationAgent.is_navigation_finished()):
 				return
-			var targetPos = navigationAgent.get_next_location()
+			var targetPos = navigationAgent.get_next_path_position()
 			var direction = global_position.direction_to(targetPos)
 			velocity = direction * speed
 			move_and_slide()
