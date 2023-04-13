@@ -1,18 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3mmxr3skutci"]
+[gd_scene load_steps=5 format=3 uid="uid://b3mmxr3skutci"]
 
 [ext_resource type="Script" path="res://Scripts/startGui.gd" id="1_62jas"]
 [ext_resource type="Material" uid="uid://dkc05jrdeuinl" path="res://style/shader.tres" id="2_rew12"]
 [ext_resource type="Texture2D" uid="uid://d2fv83pxherh4" path="res://Images/storiesfunny2.png" id="3_rvdxn"]
 [ext_resource type="Texture2D" uid="uid://cjwm21v75vb4c" path="res://Images/stories-exe-icon.png" id="4_6gulm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ef38"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu3xj"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2xje"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="startGui" type="Control"]
 self_modulate = Color(1, 1, 1, 0)
@@ -26,6 +17,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_62jas")
+
+[node name="Title" type="TextureRect" parent="."]
+material = ExtResource("2_rew12")
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.0
+offset_top = 100.0
+offset_right = 124.0
+offset_bottom = 259.0
+texture = ExtResource("3_rvdxn")
+expand_mode = 1
+
+[node name="Logo" type="TextureRect" parent="Title"]
+material = ExtResource("2_rew12")
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 14.0005
+offset_top = 22.0
+offset_right = 104.0
+offset_bottom = 112.0
+texture = ExtResource("4_6gulm")
+expand_mode = 1
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
@@ -62,50 +77,3 @@ offset_top = 104.0
 offset_right = 76.0
 offset_bottom = 149.0
 text = "Exit"
-
-[node name="Title" type="TextureRect" parent="."]
-material = ExtResource("2_rew12")
-layout_mode = 0
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -252.0
-offset_top = 100.0
-offset_right = 124.0
-offset_bottom = 259.0
-texture = ExtResource("3_rvdxn")
-expand_mode = 1
-
-[node name="Logo" type="TextureRect" parent="Title"]
-material = ExtResource("2_rew12")
-layout_mode = 0
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 14.0005
-offset_top = 22.0
-offset_right = 104.0
-offset_bottom = 112.0
-texture = ExtResource("4_6gulm")
-expand_mode = 1
-
-[node name="Hush" type="Button" parent="."]
-layout_mode = 0
-offset_left = 666.0
-offset_top = 153.0
-offset_right = 686.0
-offset_bottom = 167.0
-theme_override_colors/font_color = Color(0, 0, 0, 0)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
-theme_override_styles/normal = SubResource("StyleBoxFlat_3ef38")
-theme_override_styles/hover = SubResource("StyleBoxFlat_fu3xj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_c2xje")

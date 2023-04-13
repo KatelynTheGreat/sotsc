@@ -1,0 +1,240 @@
+[gd_scene load_steps=19 format=3 uid="uid://ddvpwvl6co0x6"]
+
+[ext_resource type="PackedScene" uid="uid://b3mmxr3skutci" path="res://MainMenuComponents/start_gui.tscn" id="2_kf1kv"]
+[ext_resource type="PackedScene" uid="uid://dylt7upv65i46" path="res://MainMenuComponents/hush_panel.tscn" id="3_xkbvm"]
+[ext_resource type="PackedScene" uid="uid://b622tq73r34tc" path="res://MainMenuComponents/OptionsMenu.tscn" id="4_m2wuq"]
+[ext_resource type="Script" path="res://Scripts/OptionsMenu.gd" id="5_iww4v"]
+[ext_resource type="PackedScene" uid="uid://7frq0gklf7mc" path="res://mainMenu/MainMenu.dae" id="6_fb7sw"]
+[ext_resource type="ArrayMesh" uid="uid://c7kinh54daa3r" path="res://mainMenu/BUDLING.obj" id="7_yh4lu"]
+[ext_resource type="Texture2D" uid="uid://cvej6k036inps" path="res://qwhiet.png" id="8_xvwgw"]
+[ext_resource type="Texture2D" uid="uid://dvia27i38yx28" path="res://PISS-modified.png" id="9_tpk7h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ref1r"]
+sky_top_color = Color(0.141176, 0.176471, 0.223529, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+sun_curve = 1e-05
+
+[sub_resource type="Sky" id="Sky_uq0tf"]
+sky_material = SubResource("ProceduralSkyMaterial_ref1r")
+
+[sub_resource type="Environment" id="Environment_86hqk"]
+background_mode = 2
+sky = SubResource("Sky_uq0tf")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+adjustment_enabled = true
+adjustment_brightness = 2.0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_rq5a1"]
+
+[sub_resource type="GDScript" id="GDScript_8p18l"]
+script/source = "extends Camera3D
+
+var amplitude = 0.001 # the magnitude of the sway
+var frequency = 0.2 # the number of swings per second
+var offset = Vector3()
+var total_time = 0
+
+
+func _process(delta):
+	total_time += delta
+	offset.x = amplitude * sin(total_time * frequency * 2 * 3.14159265359)
+	offset.y = amplitude * cos(total_time * frequency * 2 * 3.14159265359)
+	translate(offset)
+
+
+"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g8vtq"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(4, 2, 2)
+direction = Vector3(5, 0, 0)
+spread = 180.0
+gravity = Vector3(0, -50, 0)
+color = Color(0.360784, 1, 1, 1)
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xy8x"]
+transparency = 3
+alpha_hash_scale = 2.0
+alpha_antialiasing_mode = 0
+cull_mode = 1
+albedo_color = Color(0.0196078, 0.34902, 0.517647, 0.596078)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_hn4dj"]
+material = SubResource("StandardMaterial3D_5xy8x")
+size = Vector3(0.02, 0.2, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6ncq"]
+transparency = 4
+albedo_texture = ExtResource("9_tpk7h")
+emission_enabled = true
+emission = Color(0.0352941, 0.0352941, 0.0352941, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_l7rff"]
+material = SubResource("StandardMaterial3D_t6ncq")
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.07963)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_86hqk")
+camera_attributes = SubResource("CameraAttributesPractical_rq5a1")
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(0.893348, 0, -0.449366, 0, 1, 0, 0.449366, 0, 0.893348, -17.3791, 1.14712, 3.72884)
+script = SubResource("GDScript_8p18l")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040314, 0.0829768, 1.42614)
+light_energy = 15.061
+spot_range = 2.26912
+spot_angle = 26.2116
+
+[node name="startGui" parent="." instance=ExtResource("2_kf1kv")]
+
+[node name="HushPanel" parent="." instance=ExtResource("3_xkbvm")]
+visible = false
+
+[node name="OptionsMenu" parent="." instance=ExtResource("4_m2wuq")]
+visible = false
+offset_left = -0.197815
+offset_top = 0.076416
+offset_right = -0.197754
+offset_bottom = 0.076416
+script = ExtResource("5_iww4v")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.893348, 0, -0.449366, 0, 1, 0, 0.449366, 0, 0.893348, -15.3581, 4.40393, 1.01066)
+amount = 600
+lifetime = 5.0
+randomness = 1.0
+visibility_aabb = AABB(-3.83081, -4, -1.90148, 7.66162, 8, 3.80297)
+process_material = SubResource("ParticleProcessMaterial_g8vtq")
+draw_pass_1 = SubResource("BoxMesh_hn4dj")
+
+[node name="MainMenu" parent="." instance=ExtResource("6_fb7sw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9136, 0, 0)
+
+[node name="Cop Car" parent="MainMenu" index="0"]
+transform = Transform3D(-0.275824, 0, -4.16483e-08, 0, 0.275824, 0, 4.16483e-08, 0, -0.275824, -1.76947, 0.188822, -3.67372)
+
+[node name="FrontWindows" parent="MainMenu" index="16"]
+transform = Transform3D(9.54689e-09, 0, -0.126452, 0, 0.101468, 0, 0.126452, 0, 9.54689e-09, 1.22477, 1.41647, -1.61987)
+
+[node name="Budling" type="MeshInstance3D" parent="MainMenu"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169182, 0, -0.00437033)
+mesh = ExtResource("7_yh4lu")
+skeleton = NodePath("../..")
+
+[node name="lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0312, 0.363336, -0.0147395)
+
+[node name="windowLight" type="SpotLight3D" parent="lights"]
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight2" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844026, 1.93673, -0.11579)
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight3" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331348, 0.954378, -0.11579)
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight4" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29283, 0.954378, -0.11579)
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight5" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19484, 0.0711833, -0.11579)
+light_energy = 0.543
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight6" type="SpotLight3D" parent="lights"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.02424, 1.0145, -2.46562)
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight7" type="SpotLight3D" parent="lights"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.02424, 1.0145, -3.26744)
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight8" type="SpotLight3D" parent="lights"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.02424, 0.0989442, -2.89778)
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight9" type="SpotLight3D" parent="lights"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.02424, 0.0989442, -2.07725)
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight10" type="SpotLight3D" parent="lights"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.02424, 0.0989442, -3.69407)
+spot_range = 1.65722
+spot_angle = 18.65
+
+[node name="windowLight11" type="SpotLight3D" parent="lights"]
+transform = Transform3D(0.999959, 0, -0.00909304, 0, 1, 0, 0.00909304, 0, 0.999959, 0.433212, 3.85094, -11.0615)
+light_specular = 0.0
+spot_range = 1.65722
+spot_angle = 25.0289
+
+[node name="windowLight12" type="SpotLight3D" parent="lights"]
+transform = Transform3D(0.999959, 0, -0.00909304, 0, 1, 0, 0.00909304, 0, 0.999959, -0.886354, 3.65168, -11.0615)
+light_specular = 0.0
+spot_range = 1.65722
+spot_angle = 25.0289
+
+[node name="windowLight13" type="SpotLight3D" parent="lights"]
+transform = Transform3D(0.999959, 0, -0.00909304, 0, 1, 0, 0.00909304, 0, 0.999959, -5.45573, 3.81548, -11.0555)
+light_specular = 0.0
+spot_range = 1.65722
+spot_angle = 14.383
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.999545, -0.0279979, -0.0111995, 0.0301547, 0.928051, 0.371231, -1.58436e-08, -0.3714, 0.928473, -16.6237, 0.347301, -3.35937)
+light_energy = 0.2
+light_projector = ExtResource("8_xvwgw")
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 0.236005
+spot_angle = 47.055
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(66.4062, -4.31664e-08, -44.8471, -2.76321, 14.5608, -1.83217, 66.9617, 0.600861, 44.3994, 19.4175, -4.92486, 1.76054)
+mesh = SubResource("QuadMesh_l7rff")
+
+[connection signal="pressed" from="startGui/Options" to="startGui" method="_on_options_pressed"]
+[connection signal="pressed" from="startGui/Options" to="OptionsMenu" method="_on_options_pressed"]
+[connection signal="pressed" from="startGui/Exit" to="startGui" method="_on_exit_pressed"]
+[connection signal="pressed" from="startGui/Hush" to="startGui" method="_on_hush_pressed"]
+[connection signal="pressed" from="startGui/Hush" to="HushPanel" method="_on_hush_pressed"]
+[connection signal="pressed" from="HushPanel/Back" to="startGui" method="_on_back_pressed"]
+[connection signal="pressed" from="HushPanel/Back" to="HushPanel" method="_on_back_pressed"]
+[connection signal="pressed" from="OptionsMenu/BackButton" to="startGui" method="_on_back_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/BackButton" to="OptionsMenu" method="_on_back_button_pressed"]
+
+[editable path="startGui"]
+[editable path="HushPanel"]
+[editable path="OptionsMenu"]
+[editable path="MainMenu"]

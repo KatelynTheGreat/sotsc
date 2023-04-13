@@ -1,11 +1,4 @@
 res://default_env.tres
-res://TestingGameMechanics/test.tscn
+res://Main.tscn
 res://style/shader.tres
 res://Images/Particles/rain.gdshader
-res://Enemies/Scripts/SecurityGuard.gd
-res://MainMenuComponents/start_gui.tscn
-res://MainMenuComponents/hush_panel.tscn
-res://MainMenuComponents/OptionsMenu.tscn
-res://Main.tscn
-res://Player/Player.tscn
-res://TestingGameMechanics/stamina_insanity.tscn

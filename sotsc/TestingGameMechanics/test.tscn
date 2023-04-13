@@ -1,9 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://b2qeu26rqq0rp"]
 
 [ext_resource type="PackedScene" uid="uid://gr2kqqtu57ua" path="res://Player/Player.tscn" id="1_i5ttn"]
-[ext_resource type="PackedScene" uid="uid://dt56xyasuqmg5" path="res://Enemies/SecurityGuard.tscn" id="2_76t5w"]
 [ext_resource type="Script" path="res://TestingGameMechanics/Scripts/Interactwall.gd" id="2_ny385"]
-[ext_resource type="Script" path="res://Enemies/Scripts/SecurityGuard.gd" id="3_nfkio"]
 
 [sub_resource type="Environment" id="Environment_kaato"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -32,6 +30,10 @@ size = Vector3(1.4279, 3.37702, 3.60167)
 size = Vector3(1.32961, 1.19891, 1.9653)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g72k8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ph2kf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g5uoi"]
 
 [node name="test" type="Node3D"]
 
@@ -88,21 +90,22 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4826, -0.8235, -2.32522)
 
 [node name="Marker3D" type="Marker3D" parent="." groups=["EnemyWaypoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2319, 0, -19.7478)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7546, 0, -13.8977)
 
 [node name="Marker3D2" type="Marker3D" parent="." groups=["EnemyWaypoint"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9742, 0, -12.0406)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4967, 0, -12.0406)
 
-[node name="SecurityGuard" parent="." instance=ExtResource("2_76t5w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5422, -0.935626, -6.43513)
-script = ExtResource("3_nfkio")
+[node name="EnemyAi" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4207, 0, -19.856)
+input_ray_pickable = false
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="SecurityGuard"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyAi"]
+shape = SubResource("CapsuleShape3D_ph2kf")
 
-[node name="PatrolTimer" type="Timer" parent="SecurityGuard"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyAi"]
+mesh = SubResource("CapsuleMesh_g5uoi")
 
 [connection signal="walL" from="Player" to="NavigationRegion3D/wall" method="_on_player_wal_l"]
 
 [editable path="Player"]
 [editable path="Player/Stamina_Insanity"]
-[editable path="SecurityGuard"]

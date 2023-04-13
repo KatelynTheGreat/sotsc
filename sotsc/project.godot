@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sotsc"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://mainMenu/Main.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 
 window/size/mode=3
 window/size/resizable=false
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [gui]
 
