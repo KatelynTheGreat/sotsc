@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://divtisvf41s6n"]
+
+[ext_resource type="PackedScene" uid="uid://qi3m05xowa4c" path="res://LibPlay/LibPlaySceneSplit.glb" id="1_bvrhs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o46xx"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_brvtm"]
+size = Vector3(200.251, 86.2219, 1)
+
+[sub_resource type="Environment" id="Environment_6gs6v"]
+ambient_light_energy = 0.33
+fog_enabled = true
+fog_light_color = Color(0.32549, 0.352941, 0.4, 1)
+fog_light_energy = 0.83
+fog_density = 0.003
+fog_sky_affect = 0.0
+fog_height = -1024.0
+fog_height_density = 16.0
+volumetric_fog_enabled = true
+
+[node name="LibPlaySceneSplit" instance=ExtResource("1_bvrhs")]
+
+[node name="CarpetBorder" parent="." index="104"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o46xx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WoodFlooring" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 3.97904e-13, 0, -3.97904e-13, 0.999999, 0, -90.8201, -9.81644)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WoodFlooring/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_brvtm")
+
+[node name="CarpetOuter" parent="." index="107"]
+transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, -0.00225258, 0.0546284, -0.00667953)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="114"]
+environment = SubResource("Environment_6gs6v")

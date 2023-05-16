@@ -1,4 +1,12 @@
 res://default_env.tres
-res://Main.tscn
-res://style/shader.tres
-res://Images/Particles/rain.gdshader
+res://level_1.tscn
+res://LibPlay/extra/wall.res
+res://LibPlay/extra/floor.res
+res://LibPlay/extra/roof.res
+res://MainMenuComponents/OptionsMenu.tscn
+res://Player/Player.tscn
+res://TestingGameMechanics/stamina_insanity.tscn
+res://mainMenu/Main.tscn
+res://MainMenuComponents/start_gui.tscn
+res://lib_play_scene_split.tscn
+res://TestingGameMechanics/test.tscn

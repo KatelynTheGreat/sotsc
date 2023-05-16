@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 signal walL
 
-var speed = 25
+var speed = 50
 var acceleration = 5
 var gravity = 0.98
 var jump_power = 30
@@ -18,7 +18,7 @@ var INstamina = 0
 var velocty = Vector3()
 var camera_x_rotation = 0
 var clicks = 0
-var crouch_speed = 15
+var crouch_speed = 30
 var crouched = false
 
 
@@ -50,17 +50,17 @@ func _process(delta):
 
 	if Input.is_action_pressed("Shift"):
 		if crouched == true:
-			speed = 15
+			speed = 30
 			current_stamina = clamp(current_stamina + stamina_regeneration_rate * delta, 0, max_stamina)
 			$Stamina_Insanity/Stamina.value = current_stamina
 		else:
 			current_stamina = clamp(current_stamina - stamina_drain_rate * delta, 0, max_stamina)
 			$Stamina_Insanity/Stamina.value = current_stamina
-			speed = 30
+			speed = 100
 	else:
 		current_stamina = clamp(current_stamina + stamina_regeneration_rate * delta, 0, max_stamina)
 		$Stamina_Insanity/Stamina.value = current_stamina
-		speed = 25
+		speed = 50
 		
 		
 
@@ -82,11 +82,11 @@ func _physics_process(delta):
 			if crouched == true:
 				$AnimationPlayer.play("UnCrouch")
 				crouched = false
-				speed = 25
+				speed = 50
 				return
 			if crouched == false:
 				$AnimationPlayer.play("Crouch")
-				speed = 15
+				speed = 30
 				crouched = true
 				return
 	
@@ -110,4 +110,11 @@ func _physics_process(delta):
 
 
 
+
+
+
+func _on_visible_on_screen_enabler_3d_screen_entered():
+	print("watch out!")
+	$Stamina_Insanity/Insanity.value = $Stamina_Insanity/Insanity.value + 10
+	
 

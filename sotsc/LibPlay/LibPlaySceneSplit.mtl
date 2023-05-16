@@ -1,0 +1,362 @@
+# Blender 3.4.0 MTL File: 'LibPlaySceneSplit.blend'
+# www.blender.org
+
+newmtl CarpetBorder
+Ka 1.000000 1.000000 1.000000
+Ks 0.039004 0.039004 0.039004
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part604_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part604_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part604_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part604_nmap.png
+
+newmtl CarpetInnard
+Ka 1.000000 1.000000 1.000000
+Ks 0.001461 0.001461 0.001461
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_nmap.png
+
+newmtl CarpetOuter
+Ka 1.000000 1.000000 1.000000
+Ks 0.001648 0.001648 0.001648
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_nmap.png
+
+newmtl DarkBeige
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/NewLibObj/Computer/shashaunga/darkBeige.png
+
+newmtl Glass
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Documents/startscene/Textures/glass - Copy/glass_diff.png
+
+newmtl InternalDarkPlastic
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/NewLibObj/360_F_166161972_YiceBvzi2tXl1AYmB7APthiXtB0F5GVU.jpg
+
+newmtl IslandWood
+Ka 1.000000 1.000000 1.000000
+Ks 0.006754 0.006754 0.006754
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_nmap.png
+
+newmtl Keyboard
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/UnicompCustomizer-Classic104Key.png
+
+newmtl Leg
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/NewLibObj/Table/Supports/LegsDiff.png
+
+newmtl LibTop
+Ka 1.000000 1.000000 1.000000
+Ks 0.007543 0.007543 0.007543
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part603_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part603_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part603_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part603_nmap.png
+
+newmtl LibWall1
+Ka 1.000000 1.000000 1.000000
+Ks 0.010239 0.010239 0.010239
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part603_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part603_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part603_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part603_nmap.png
+
+newmtl LightBeige
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/NewLibObj/Computer/shashaunga/LightBeige.png
+
+newmtl LobbyChair1Mtl
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.027451 0.027451 0.027451
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/LobbyChair1_diff.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/LobbyChair1_diff.png
+
+newmtl MainCarpetBorder
+Ka 1.000000 1.000000 1.000000
+Ks 0.000527 0.000527 0.000527
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_nmap.png
+
+newmtl Part1Mtl.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.018847 0.018847 0.018847
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/noor/Union1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/noor/Union1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/noor/Union1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/noor/Union1_nmap.png
+
+newmtl PillarBases
+Ka 1.000000 1.000000 1.000000
+Ks 0.021480 0.021480 0.021480
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_nmap.png
+
+newmtl PillarFrames
+Ka 1.000000 1.000000 1.000000
+Ks 0.011681 0.011681 0.011681
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_nmap.png
+
+newmtl Pillars
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.151058 0.096266 0.067725
+Ks 0.041595 0.041595 0.041595
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl PlasticChair1Mtl
+Ka 1.000000 1.000000 1.000000
+Ks 0.032381 0.032381 0.032381
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Chair/PlasticChair1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Chair/PlasticChair1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Chair/PlasticChair1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Chair/PlasticChair1_nmap.png
+
+newmtl RoundDeskWood
+Ka 1.000000 1.000000 1.000000
+Ks 0.003212 0.003212 0.003212
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_nmap.png
+
+newmtl Screen
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/NewLibObj/Computer/Screen/Part1_diff.png
+
+newmtl ShelfFrames
+Ka 1.000000 1.000000 1.000000
+Ks 0.005186 0.005186 0.005186
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part1_nmap.png
+
+newmtl ShelfVerts
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.007155 0.018913 0.031551
+Ks 0.007607 0.007607 0.007607
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Shell
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/NewLibObj/Computer/shashaunga/Part1_diff.png
+
+newmtl SideCarpet
+Ka 1.000000 1.000000 1.000000
+Ks 0.002889 0.002889 0.002889
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_nmap.png
+
+newmtl StairBase
+Ka 1.000000 1.000000 1.000000
+Ks 0.027338 0.027338 0.027338
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_nmap.png
+
+newmtl StairCarpet
+Ka 1.000000 1.000000 1.000000
+Ks 0.009444 0.009444 0.009444
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part611_nmap.png
+
+newmtl StairIslandWood
+Ka 1.000000 1.000000 1.000000
+Ks 0.003784 0.003784 0.003784
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_nmap.png
+
+newmtl StairSlats
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.026231 0.026231 0.026231
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 9
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part2388_diff.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part2388_diff.png
+
+newmtl StairWedge
+Ka 1.000000 1.000000 1.000000
+Ks 0.045874 0.045874 0.045874
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Union1_nmap.png
+
+newmtl Top
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/NewLibObj/Table/WoodPart1_diff.png
+
+newmtl Union1Mtl.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.003212 0.003212 0.003212
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/noor/Union1_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/noor/Union1_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/noor/Union1_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/noor/Union1_nmap.png
+
+newmtl Wood
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/gilbey_gage/Documents/startscene/Textures/wood1/Part1_diff.png
+
+newmtl WoodPlanksGood
+Ka 1.000000 1.000000 1.000000
+Ks 0.037102 0.037102 0.037102
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part605_diff.png
+map_Ns C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part605_spec.png
+map_d C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part605_diff.png
+map_Bump C:/Users/gilbey_gage/Downloads/BloxLib/Library/Part605_nmap.png

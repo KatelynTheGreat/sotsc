@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2qeu26rqq0rp"]
+[gd_scene load_steps=14 format=3 uid="uid://b2qeu26rqq0rp"]
 
 [ext_resource type="PackedScene" uid="uid://gr2kqqtu57ua" path="res://Player/Player.tscn" id="1_i5ttn"]
 [ext_resource type="Script" path="res://TestingGameMechanics/Scripts/Interactwall.gd" id="2_ny385"]
+[ext_resource type="Script" path="res://TestingGameMechanics/StaticBody3DHurtVanish.gd" id="3_plpay"]
 
 [sub_resource type="Environment" id="Environment_kaato"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -30,10 +31,6 @@ size = Vector3(1.4279, 3.37702, 3.60167)
 size = Vector3(1.32961, 1.19891, 1.9653)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g72k8"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ph2kf"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_g5uoi"]
 
 [node name="test" type="Node3D"]
 
@@ -66,14 +63,22 @@ transform = Transform3D(1, 0, 0, 0, 3.40823, 0, 0, 0, 3.59825, 0, -0.206084, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.200073, 0)
 shape = SubResource("BoxShape3D_5sn4k")
 
+[node name="Player" parent="NavigationRegion3D" instance=ExtResource("1_i5ttn")]
+transform = Transform3D(0.19122, 0, 0.981547, 0, 1, 0, -0.981547, 0, 0.19122, -16.4826, -1.05766, -19.2586)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -13.3204, 0.376511, -5.45055)
+script = ExtResource("3_plpay")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_84tq1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
 mesh = SubResource("BoxMesh_fmfol")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="NavigationRegion3D/StaticBody3D/MeshInstance3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+aabb = AABB(-0.539393, -0.506294, -0.433281, 1.07879, 1.01259, 0.866563)
 
 [node name="block" type="Area3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6061, 0, 0)
@@ -86,26 +91,15 @@ shape = SubResource("BoxShape3D_3nicm")
 mesh = SubResource("BoxMesh_g72k8")
 skeleton = NodePath("../../..")
 
-[node name="Player" parent="." instance=ExtResource("1_i5ttn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4826, -0.8235, -2.32522)
-
 [node name="Marker3D" type="Marker3D" parent="." groups=["EnemyWaypoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7546, 0, -13.8977)
 
 [node name="Marker3D2" type="Marker3D" parent="." groups=["EnemyWaypoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4967, 0, -12.0406)
 
-[node name="EnemyAi" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4207, 0, -19.856)
-input_ray_pickable = false
+[connection signal="walL" from="NavigationRegion3D/Player" to="NavigationRegion3D/wall" method="_on_player_wal_l"]
+[connection signal="screen_entered" from="NavigationRegion3D/StaticBody3D/MeshInstance3D/VisibleOnScreenEnabler3D" to="NavigationRegion3D/Player" method="_on_visible_on_screen_enabler_3d_screen_entered"]
+[connection signal="screen_entered" from="NavigationRegion3D/StaticBody3D/MeshInstance3D/VisibleOnScreenEnabler3D" to="NavigationRegion3D/StaticBody3D" method="_on_visible_on_screen_enabler_3d_screen_entered"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyAi"]
-shape = SubResource("CapsuleShape3D_ph2kf")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyAi"]
-mesh = SubResource("CapsuleMesh_g5uoi")
-
-[connection signal="walL" from="Player" to="NavigationRegion3D/wall" method="_on_player_wal_l"]
-
-[editable path="Player"]
-[editable path="Player/Stamina_Insanity"]
+[editable path="NavigationRegion3D/Player"]
+[editable path="NavigationRegion3D/Player/Stamina_Insanity"]
