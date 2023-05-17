@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://8k8wo8wdp3s2"
+path="res://.godot/imported/wood2.obj-bd1af3446e3f2a1dc55376d8ced504fa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wood2.obj-bd1af3446e3f2a1dc55376d8ced504fa.mesh"]
+
+source_file="res://mainMenu/Textures/wood2/wood2.obj"
+dest_files=["res://.godot/imported/wood2.obj-bd1af3446e3f2a1dc55376d8ced504fa.mesh", "res://.godot/imported/wood2.obj-bd1af3446e3f2a1dc55376d8ced504fa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

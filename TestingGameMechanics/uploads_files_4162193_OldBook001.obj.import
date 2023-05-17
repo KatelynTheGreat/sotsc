@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c10o8xo4wyb07"
+path="res://.godot/imported/uploads_files_4162193_OldBook001.obj-cf9c42e16da0edc02cb505a68ee7750d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/uploads_files_4162193_OldBook001.obj-cf9c42e16da0edc02cb505a68ee7750d.mesh"]
+
+source_file="res://TestingGameMechanics/uploads_files_4162193_OldBook001.obj"
+dest_files=["res://.godot/imported/uploads_files_4162193_OldBook001.obj-cf9c42e16da0edc02cb505a68ee7750d.mesh", "res://.godot/imported/uploads_files_4162193_OldBook001.obj-cf9c42e16da0edc02cb505a68ee7750d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5e71dy4nacli"
+path="res://.godot/imported/NeNoor.obj-1b333bd8bb8c85ef930cfaac0637e29c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/NeNoor.obj-1b333bd8bb8c85ef930cfaac0637e29c.mesh"]
+
+source_file="res://LibPlay/noor/NeNoor.obj"
+dest_files=["res://.godot/imported/NeNoor.obj-1b333bd8bb8c85ef930cfaac0637e29c.mesh", "res://.godot/imported/NeNoor.obj-1b333bd8bb8c85ef930cfaac0637e29c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

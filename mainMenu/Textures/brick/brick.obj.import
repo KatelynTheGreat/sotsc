@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cwxml2futpomn"
+path="res://.godot/imported/brick.obj-c53938a6da48fda130b1c217d7ddd695.mesh"
+
+[deps]
+
+files=["res://.godot/imported/brick.obj-c53938a6da48fda130b1c217d7ddd695.mesh"]
+
+source_file="res://mainMenu/Textures/brick/brick.obj"
+dest_files=["res://.godot/imported/brick.obj-c53938a6da48fda130b1c217d7ddd695.mesh", "res://.godot/imported/brick.obj-c53938a6da48fda130b1c217d7ddd695.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://b2qeu26rqq0rp"]
+
+[ext_resource type="PackedScene" uid="uid://gr2kqqtu57ua" path="res://Player/Player.tscn" id="1_i5ttn"]
+[ext_resource type="Script" path="res://TestingGameMechanics/Scripts/Interactwall.gd" id="2_ny385"]
+[ext_resource type="Script" path="res://TestingGameMechanics/StaticBody3DHurtVanish.gd" id="3_plpay"]
+
+[sub_resource type="Environment" id="Environment_kaato"]
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_y4ru5"]
+vertices = PackedVector3Array(-33.7859, -1.89168, -28.9757, -40.5359, -1.89168, -28.9757, -40.5359, -1.89168, -21.7257, -27.0359, -1.89168, -28.9757, -33.7859, -1.89168, -28.9757, -40.5359, -1.89168, -21.7257, -27.0359, -1.89168, -28.9757, -40.5359, -1.89168, -21.7257, -40.5359, -1.89168, -14.4757, -20.2859, -1.89168, -28.9757, -14.5359, -1.89168, -2.22573, -13.5359, -1.89168, -2.47573, -13.5359, -1.89168, -28.9757, -20.2859, -1.89168, -28.9757, -40.5359, -1.89168, -14.4757, -40.5359, -1.89168, -7.22573, -40.5359, -1.89168, 0.024271, -14.5359, -1.89168, 0.024271, -14.5359, -1.89168, -2.22573, -40.5359, -1.89168, -7.22573, 9.21405, -1.89168, -21.7257, 9.21405, -1.89168, -28.9757, -2.28595, -1.89168, -28.9757, 9.21405, -1.89168, -14.4757, 9.21405, -1.89168, -21.7257, -2.28595, -1.89168, -28.9757, -12.2859, -1.89168, -2.22573, -12.2859, -1.89168, 0.024271, 9.21405, -1.89168, 0.024271, 9.21405, -1.89168, -7.22573, -13.5359, -1.89168, -2.47573, -12.2859, -1.89168, -2.22573, 9.21405, -1.89168, -7.22573, 9.21405, -1.89168, -14.4757, -2.28595, -1.89168, -28.9757, -13.5359, -1.89168, -28.9757, -14.0359, 1.85832, -5.97573, -14.0359, 1.85832, -4.72573, -12.7859, 1.85832, -4.72573, -12.7859, 1.85832, -5.97573, -40.5359, -1.89168, 20.0243, -40.5359, -1.89168, 26.7743, -33.7859, -1.89168, 26.7743, -40.5359, -1.89168, 13.2743, -40.5359, -1.89168, 20.0243, -33.7859, -1.89168, 26.7743, -40.5359, -1.89168, 13.2743, -33.7859, -1.89168, 26.7743, -27.0359, -1.89168, 26.7743, -40.5359, -1.89168, 6.52427, -14.5359, -1.89168, 2.27427, -14.5359, -1.89168, 0.024271, -40.5359, -1.89168, 0.024271, -40.5359, -1.89168, 6.52427, -27.0359, -1.89168, 26.7743, -20.2859, -1.89168, 26.7743, -13.5359, -1.89168, 26.7743, -13.5359, -1.89168, 2.52427, -14.5359, -1.89168, 2.27427, -20.2859, -1.89168, 26.7743, -2.28595, -1.89168, 26.7743, 9.21405, -1.89168, 26.7743, 9.21405, -1.89168, 20.0243, -2.28595, -1.89168, 26.7743, 9.21405, -1.89168, 20.0243, 9.21405, -1.89168, 13.2743, 9.21405, -1.89168, 0.024271, -12.2859, -1.89168, 0.024271, -12.2859, -1.89168, 2.27427, 9.21405, -1.89168, 6.52427, 9.21405, -1.89168, 6.52427, -12.2859, -1.89168, 2.27427, -13.5359, -1.89168, 2.52427, -13.5359, -1.89168, 26.7743, -2.28595, -1.89168, 26.7743, 9.21405, -1.89168, 13.2743)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(13, 10, 14), PackedInt32Array(14, 10, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(22, 21, 20), PackedInt32Array(25, 24, 23), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 29), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 33), PackedInt32Array(33, 30, 34), PackedInt32Array(34, 30, 35), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(42, 41, 40), PackedInt32Array(45, 44, 43), PackedInt32Array(47, 46, 48), PackedInt32Array(48, 46, 49), PackedInt32Array(51, 50, 52), PackedInt32Array(52, 50, 53), PackedInt32Array(53, 50, 54), PackedInt32Array(54, 50, 55), PackedInt32Array(57, 56, 58), PackedInt32Array(58, 56, 59), PackedInt32Array(62, 61, 60), PackedInt32Array(65, 64, 63), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 69), PackedInt32Array(71, 70, 72), PackedInt32Array(72, 70, 75), PackedInt32Array(72, 75, 74), PackedInt32Array(72, 74, 73)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bv65f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2y0r"]
+albedo_color = Color(0.517647, 0.647059, 0.945098, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xoct1"]
+points = PackedVector3Array(-1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5sn4k"]
+size = Vector3(1.4279, 3.37702, 3.60167)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84tq1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fmfol"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nicm"]
+size = Vector3(1.32961, 1.19891, 1.9653)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g72k8"]
+
+[node name="test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kaato")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_y4ru5")
+
+[node name="Ground2" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(50.8655, 0, 0, 0, 1, 0, 0, 0, 56.8242, -15.6032, -2.89168, -1.06363)
+mesh = SubResource("BoxMesh_bv65f")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c2y0r")
+
+[node name="StaticBody" type="StaticBody3D" parent="NavigationRegion3D/Ground2"]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="NavigationRegion3D/Ground2/StaticBody"]
+shape = SubResource("ConvexPolygonShape3D_xoct1")
+
+[node name="wall" type="RigidBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5014, -0.488144, 0)
+continuous_cd = true
+script = ExtResource("2_ny385")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/wall"]
+transform = Transform3D(1, 0, 0, 0, 3.40823, 0, 0, 0, 3.59825, 0, -0.206084, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.200073, 0)
+shape = SubResource("BoxShape3D_5sn4k")
+
+[node name="Player" parent="NavigationRegion3D" instance=ExtResource("1_i5ttn")]
+transform = Transform3D(0.19122, 0, 0.981547, 0, 1, 0, -0.981547, 0, 0.19122, -16.4826, -1.05766, -19.2586)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -13.3204, 0.376511, -5.45055)
+script = ExtResource("3_plpay")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_84tq1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+mesh = SubResource("BoxMesh_fmfol")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="NavigationRegion3D/StaticBody3D/MeshInstance3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+aabb = AABB(-0.539393, -0.506294, -0.433281, 1.07879, 1.01259, 0.866563)
+
+[node name="block" type="Area3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6061, 0, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/block"]
+shape = SubResource("BoxShape3D_3nicm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/block"]
+mesh = SubResource("BoxMesh_g72k8")
+skeleton = NodePath("../../..")
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["EnemyWaypoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7546, 0, -13.8977)
+
+[node name="Marker3D2" type="Marker3D" parent="." groups=["EnemyWaypoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4967, 0, -12.0406)
+
+[connection signal="walL" from="NavigationRegion3D/Player" to="NavigationRegion3D/wall" method="_on_player_wal_l"]
+[connection signal="screen_entered" from="NavigationRegion3D/StaticBody3D/MeshInstance3D/VisibleOnScreenEnabler3D" to="NavigationRegion3D/Player" method="_on_visible_on_screen_enabler_3d_screen_entered"]
+[connection signal="screen_entered" from="NavigationRegion3D/StaticBody3D/MeshInstance3D/VisibleOnScreenEnabler3D" to="NavigationRegion3D/StaticBody3D" method="_on_visible_on_screen_enabler_3d_screen_entered"]
+
+[editable path="NavigationRegion3D/Player"]
+[editable path="NavigationRegion3D/Player/Stamina_Insanity"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3mmxr3skutci"]
+
+[ext_resource type="Script" path="res://Scripts/startGui.gd" id="1_62jas"]
+[ext_resource type="Texture2D" uid="uid://b62el5grti46e" path="res://Images/newTitle.png" id="2_o276p"]
+[ext_resource type="FontFile" uid="uid://c3mx0xbpdyhfb" path="res://style/Fonts/armor-piercing-2-0-bb.regular.ttf" id="3_pp40x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1sg2"]
+bg_color = Color(0, 0, 0, 0.215686)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ppep"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w60x2"]
+bg_color = Color(0, 0, 0, 0.215686)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxhxo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n58kk"]
+bg_color = Color(0, 0, 0, 0.215686)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auwp3"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="startGui" type="Control"]
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+visibility_layer = 2
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62jas")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 499.0
+offset_bottom = 600.0
+grow_horizontal = 2
+texture = ExtResource("2_o276p")
+expand_mode = 1
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_right = 400.0
+offset_bottom = 68.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_pp40x")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_w1sg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ppep")
+text = " Start "
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 85.5
+offset_right = 400.0
+offset_bottom = 176.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_pp40x")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_w60x2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gxhxo")
+text = "Options"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 198.5
+offset_right = 400.0
+offset_bottom = 289.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_pp40x")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_n58kk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_auwp3")
+text = "Exit"

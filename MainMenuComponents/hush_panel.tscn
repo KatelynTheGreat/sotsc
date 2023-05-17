@@ -1,0 +1,157 @@
+[gd_scene load_steps=3 format=3 uid="uid://dylt7upv65i46"]
+
+[ext_resource type="Script" path="res://Scripts/HushPanel.gd" id="1_bi3rc"]
+[ext_resource type="FontFile" uid="uid://b216605k6c2nl" path="res://style/Fonts/Pixel_NES.otf" id="2_6v5eq"]
+
+[node name="HushPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bi3rc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1118.0
+offset_bottom = 613.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.00392157, 0.145098, 1)
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 283.0
+offset_right = 812.0
+offset_bottom = 323.0
+
+[node name="Check" type="Button" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 344.0
+offset_right = 701.0
+offset_bottom = 428.0
+theme_override_fonts/font = ExtResource("2_6v5eq")
+theme_override_font_sizes/font_size = 64
+text = "Enter"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 474.0
+offset_right = 263.0
+offset_bottom = 532.0
+theme_override_fonts/font = ExtResource("2_6v5eq")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 176.0
+offset_right = 699.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("2_6v5eq")
+theme_override_font_sizes/font_size = 64
+text = "Login"
+
+[node name="checkText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 427.0
+offset_right = 721.0
+offset_bottom = 514.0
+
+[node name="Buttons" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1118.0
+offset_bottom = 613.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.00392157, 0.145098, 1)
+
+[node name="Station1" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 118.0
+offset_right = 458.0
+offset_bottom = 164.0
+text = "First Station"
+
+[node name="Station2" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 226.0
+offset_right = 458.0
+offset_bottom = 272.0
+text = "Second Station"
+
+[node name="Town" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 281.0
+offset_right = 483.0
+offset_bottom = 327.0
+text = "Town"
+
+[node name="INF Health" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 64.0
+offset_right = 961.0
+offset_bottom = 110.0
+text = "INF Health"
+
+[node name="INF Damage" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 118.0
+offset_right = 961.0
+offset_bottom = 164.0
+text = "INF Damage"
+
+[node name="INF Coins" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 173.0
+offset_right = 961.0
+offset_bottom = 219.0
+text = "INF Coins"
+
+[node name="InsideTrain" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 172.0
+offset_right = 458.0
+offset_bottom = 218.0
+text = "Inside Train"
+
+[node name="StartArea" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 64.0
+offset_right = 458.0
+offset_bottom = 110.0
+text = "Start Area3D"
+
+[connection signal="pressed" from="Check" to="." method="_on_Check_pressed"]
+[connection signal="pressed" from="Buttons/Station1" to="." method="_on_Station1_pressed"]
+[connection signal="pressed" from="Buttons/Station2" to="." method="_on_Station2_pressed"]
+[connection signal="pressed" from="Buttons/Town" to="." method="_on_Town_pressed"]
+[connection signal="pressed" from="Buttons/INF Health" to="." method="_on_INF_Health_pressed"]
+[connection signal="pressed" from="Buttons/INF Damage" to="." method="_on_INF_Damage_pressed"]
+[connection signal="pressed" from="Buttons/INF Coins" to="." method="_on_INF_Coins_pressed"]
+[connection signal="pressed" from="Buttons/InsideTrain" to="." method="_on_InsideTrain_pressed"]
+[connection signal="pressed" from="Buttons/StartArea" to="." method="_on_StartArea_pressed"]
